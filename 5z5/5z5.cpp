@@ -20,7 +20,7 @@ int nod(int a, int b)
         a = b;
         b = tem;
     }
-    return b;
+    return abs(b);
 }
 
 int main()

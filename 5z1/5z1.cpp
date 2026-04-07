@@ -2,7 +2,7 @@
 /*ќписать структуру дл€ хранени€ информации о декартовых и пол€рных координатах. Ќаписать программу, котора€ переводит декартовы координаты точки в пол€рные.*/
 
 #include <iostream>
-#include <iomanip>
+#include <cmath>
 using namespace std;
 
 struct Dec
@@ -20,10 +20,7 @@ Pol сonvert(Dec d)
 {
     Pol p;
     p.p = sqrt(d.x * d.x + d.y * d.y);
-    if (d.x)
-        p.o = atan(d.y / d.x);
-    else
-        p.o = 0;
+    p.o = atan2(d.y, d.x);
     return p;
 }
 
@@ -33,7 +30,7 @@ int main()
     cin >> pointD.x;
     cin >> pointD.y;
     Pol pointP = сonvert(pointD);
-    cout << fixed << setprecision(5) << pointP.p << " " << pointP.o;
+    cout << pointP.p << " " << pointP.o;
     system("PAUSE");
     return 0;
 }

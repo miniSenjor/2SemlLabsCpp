@@ -7,7 +7,7 @@
 #include "conio2.h"
 using namespace std;
 
-bool IsPalindrom(string s)
+bool isPalindrom(string s)
 {
     for (int i = 0; i < s.size() / 2; i++)
     {
@@ -23,7 +23,7 @@ int main()
     string s;
     cout << "Введите строку ";
     getline(cin, s);
-    if (IsPalindrom(s))
+    if (isPalindrom(s))
         cout << "Да";
     else
         cout << "Нет";
