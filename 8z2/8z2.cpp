@@ -2,11 +2,43 @@
 /*Включить в  список упорядоченных по возрастанию целых чисел   произвольное  новое  число  без  нарушения  упорядоченности и  исключите  другое  указанное  число (если такое число имеется в списке)*/
 
 #include <iostream>
-#include <forward_list>
+//#include <forward_list>
 //#include "rus_io.h"
 //#include "conio2.h"
 using namespace std;
 
+struct Node
+{
+    Node* next;
+    int val;
+};
+
+void add(Node* p, int a)
+{
+    Node* q = new Node;
+    q->val = a;
+    q->next = p->next;
+    p->next = q;
+}
+int main()
+{
+    //setRusLocale();
+    cout << "Введите кол-во чисел ";
+    int n;
+    cin >> n;
+    cout << "Вводите числа\n";
+    Node* l1 = new Node;
+    Node* cur = l1;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        add(cur, x);
+    }
+    
+    system("PAUSE");
+    return 0;
+}
 
 int main()
 {

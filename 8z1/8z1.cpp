@@ -12,27 +12,6 @@ struct Node
     Node* next;
     int val;
 };
-void pushStack(Node* top, int last)
-{
-    Node q;
-    q.val = last;
-    q.next = top;
-    top = &q;
-};
-struct FIFO
-{
-    Node* first;
-    Node* last;
-};
-void popOrd(FIFO& queue, int& first) 
-{ 
-    Node* q = queue.first->next; 
-    first = q->val; 
-    queue.first->next = q->next; 
-    delete q; 
-    if (!queue.first->next) 
-        queue.last = queue.first; 
-}
 int main()
 {
     //setRusLocale();
