@@ -197,6 +197,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "15z8", "15z8\15z8.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kyrsovai", "kyrsovai\kyrsovai.vcxproj", "{3D9FA405-E048-4EC7-8A1D-F973E6FE4165}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14z7", "14z7\14z7.vcxproj", "{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -981,6 +983,14 @@ Global
 		{3D9FA405-E048-4EC7-8A1D-F973E6FE4165}.Release|x64.Build.0 = Release|x64
 		{3D9FA405-E048-4EC7-8A1D-F973E6FE4165}.Release|x86.ActiveCfg = Release|Win32
 		{3D9FA405-E048-4EC7-8A1D-F973E6FE4165}.Release|x86.Build.0 = Release|Win32
+		{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}.Debug|x64.ActiveCfg = Debug|x64
+		{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}.Debug|x64.Build.0 = Debug|x64
+		{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}.Debug|x86.Build.0 = Debug|Win32
+		{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}.Release|x64.ActiveCfg = Release|x64
+		{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}.Release|x64.Build.0 = Release|x64
+		{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}.Release|x86.ActiveCfg = Release|Win32
+		{8CA5A876-F2A6-4556-B8E1-2B84EBF01629}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

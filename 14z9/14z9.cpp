@@ -36,7 +36,7 @@ int main()
         }
     }
     if (s.empty() && isPSP)
-        cout << "Да!";
+        cout << "Да";
     else
         cout << "Нет";
     system("PAUSE");

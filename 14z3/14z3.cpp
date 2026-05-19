@@ -11,18 +11,6 @@ void merge(queue<int>& q1, queue<int>& q2, queue<int>& out)
 {
     while (!q1.empty() && !q2.empty())
     {
-        if (q1.empty())
-        {
-            out.push(q2.front());
-            q2.pop();
-            continue;
-        }
-        if (q2.empty())
-        {
-            out.push(q1.front());
-            q1.pop();
-            continue;
-        }
         if (q1.front() < q2.front())
         {
             out.push(q1.front());
@@ -33,6 +21,16 @@ void merge(queue<int>& q1, queue<int>& q2, queue<int>& out)
             out.push(q2.front());
             q2.pop();
         }
+    }
+    while(!q1.empty())
+    {
+        out.push(q1.front());
+        q1.pop();
+    }
+    while(!q2.empty())
+    {
+        out.push(q2.front());
+        q2.pop();
     }
 }
 
