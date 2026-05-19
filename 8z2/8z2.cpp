@@ -2,7 +2,6 @@
 /*Включить в  список упорядоченных по возрастанию целых чисел   произвольное  новое  число  без  нарушения  упорядоченности и  исключите  другое  указанное  число (если такое число имеется в списке)*/
 
 #include <iostream>
-//#include <forward_list>
 //#include "rus_io.h"
 //#include "conio2.h"
 using namespace std;
@@ -20,6 +19,12 @@ void add(Node* p, int a)
     q->next = p->next;
     p->next = q;
 }
+void deleteNext(Node* p)
+{
+    Node* q = p->next;
+    p->next = q->next;
+    delete q;
+}
 int main()
 {
     //setRusLocale();
@@ -28,58 +33,48 @@ int main()
     cin >> n;
     cout << "Вводите числа\n";
     Node* l1 = new Node;
+    l1->next = nullptr;
+    /*Node* cur = l1;
+    for (int i = 0; i < n; i++)
+    {
+        cur->next = new Node;
+        cur = cur->next;
+        cin >> cur->val;
+    }*/
     Node* cur = l1;
     for (int i = 0; i < n; i++)
     {
         int x;
         cin >> x;
         add(cur, x);
+        cur = cur->next;
     }
-    
-    system("PAUSE");
-    return 0;
-}
-
-int main()
-{
-    //setRusLocale();
-    cout << "Введите кол-во чисел ";
-    int n;
-    cin >> n;
-    cout << "Вводите числа\n";
-    forward_list<int> l;
-    for (int i = 0; i < n; i++)
-    {
-        int cur;
-        cin >> cur;
-        l.push_front(cur);
-    }
+    cout << "Введите число для добавления и удаления\n";
+    bool isAdd = false;
     int addNum, delNum;
-    bool isAdd = false, isDel = false;
     cin >> addNum >> delNum;
-    auto prev = l.before_begin();
-    auto cur = l.begin();
-    auto end = l.end();
-    if (addNum > *cur)
+    cur = l1;
+    while (cur->next)
     {
-        l.insert_after(prev, addNum);
-        isAdd = true;
-    }
-    prev++;
-    cur++;
-    while(cur!=end)
-    {
-        if (!isAdd && *prev >= addNum && addNum > *cur)
+        if (cur->next->val > addNum && !isAdd)
         {
-            l.insert_after(cur, addNum);
+            add(cur, addNum);
             isAdd = true;
+            break;
         }
-        if (*cur == delNum)
+        cur = cur->next;
+    }
+    if (!isAdd)
+        add(cur, addNum);
+    cur = l1;
+    while (cur->next)
+    {
+        if (cur->next->val == delNum)
         {
-
+            deleteNext(cur);
+            break;
         }
-        prev++;
-        cur++;
+        cur = cur->next;
     }
     system("PAUSE");
     return 0;
