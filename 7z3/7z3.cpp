@@ -12,6 +12,7 @@ using namespace std;
 int main()
 {
     //setRusLocale();
+    cin.ignore();
     fstream file("inout.txt", ios::in | ios::out | ios::trunc);
     if (!file.is_open())
     {
