@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void merge(vector<int>& arr, int left, int mid, int right)
+void merge(vector<int> &arr, int left, int mid, int right)
 {
     int n1 = mid - left + 1;
     int n2 = right - mid;
