@@ -17,7 +17,7 @@ int main()
     getline(cin, s);
     map<char, int> map;
     for (char c : s)
-        if(c>96 && c<123)
+        if (c >= 'a' && c <= 'z')
             map[c] += 1;
     
     bool hasFirstChar = false;

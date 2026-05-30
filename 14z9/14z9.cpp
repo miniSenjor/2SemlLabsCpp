@@ -5,15 +5,19 @@
 #include <stack>
 //#include "rus_io.h"
 //#include "conio2.h"
+#include <windows.h>
+#include <string>
 using namespace std;
 
 
 int main()
 {
+    SetConsoleCP(1251);
+    setlocale(LC_ALL, "ru");
     //setRusLocale();
     string st;
     cout << "Введите последовательность ";
-    cin >> st;
+    getline(cin, st);
     char x;
     stack<char> s;
     bool isPSP = true;

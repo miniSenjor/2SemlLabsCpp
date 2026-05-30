@@ -47,7 +47,9 @@ int main()
     int x;
     cout << "Введите x ";
     cin >> x;
-    if (!(searchInQ(q1, x, 1) || searchInQ(q2, x, 2)))
+    bool b = searchInQ(q1, x, 1);
+    b = searchInQ(q2, x, 2) || b;
+    if (!b)
         cout << -1;
     system("PAUSE");
     return 0;

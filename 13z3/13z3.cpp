@@ -14,16 +14,16 @@ int main()
     string s;
     cout << "Введите предложение ";
     cin >> s;
-    set<char> setNum, setSign{'+', '-', '*', '/', '=', '^', '%'};
-    int countSign = 0;
+    set<char> setSign{'+', '-', '*', '/', '=', '^', '%'};
+    int countSign = 0, countNum = 0;
     for (char c : s)
     {
-        if (c > 47 && c < 58)
-            setNum.insert(c);
+        if (c >= '0' && c <= '9')
+            countNum++;
         else if (setSign.count(c))
             countSign++;
     }
-    cout << setNum.size() << " " << countSign;
+    cout << countNum << " " << countSign;
     system("PAUSE");
     return 0;
 }

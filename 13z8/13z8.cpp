@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <map>
+#include <string>
 //#include "rus_io.h"
 //#include "conio2.h"
 using namespace std;
@@ -17,11 +18,12 @@ int main()
     cout << "Введите n ";
     int n;
     cin >> n;
+    cin.ignore();
     map<string, int> map;
     string team;
     for (int i = 0; i < n; i++)
     {
-        cin >> team;
+        getline(cin, team);
         map[team] += 1;
     }
     int score1=0, score2;
