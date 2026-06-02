@@ -6,16 +6,19 @@
 //#include "rus_io.h"
 //#include "conio2.h"
 #include <string>
+#include <windows.h>
 using namespace std;
 
 
 int main()
 {
     //setRusLocale();
+    setlocale(LC_ALL, "ru");
+    SetConsoleCP(1251);
     string s;
     cout << "Введите предложение ";
     getline(cin, s);
-    set<char> set { 'а', 'е', 'ё', 'и', 'о', 'у', 'э', 'ю', 'я', 'ы' };
+    set<char> set { 'а', 'А', 'е', 'Е', 'ё', 'Ё', 'и', 'И', 'о', 'О', 'у', 'У', 'э', 'Э', 'ю', 'Ю', 'я', 'Я', 'ы', 'Ы' };
     int count = 0;
     for (char c : s)
     {

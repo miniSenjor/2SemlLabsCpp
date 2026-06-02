@@ -12,7 +12,6 @@ using namespace std;
 int main()
 {
     //setRusLocale();
-    cin.ignore();
     fstream file("inout.txt", ios::in | ios::out | ios::trunc);
     if (!file.is_open())
     {
@@ -22,21 +21,18 @@ int main()
 
     cout << "Введите строку ";
     string str;
-    cin >> str;
+    getline(cin, str);
     file << str;
-    int sizeFile = file.tellg();
     
     file.seekp(0);
-    do
+    for (int i = 0; i < str.length(); i += 2)
     {
-        if(sizeFile>0)
-            file << "*";
-        sizeFile-=2;
+        file.seekp(i);
+        file.put('*');
     }
-    while (file.get());
 
     file.seekg(0);
-    file >> str;
+    getline(file, str);
     cout << str;
     file.close();
 

@@ -1,6 +1,5 @@
 ﻿//ИПБ-25 Скворцов С.А. 3.12 4
 /*Реализовать программу, которая в линейном однонаправленном списке L из каждой группы подряд идущих одинаковых элементов оставляет только одного представителя.
-
 Замечание: использовать контейнеры типа list и/или forward_list*/
 
 #include <iostream>
@@ -23,12 +22,16 @@ int main()
         cin >> x;
         l.emplace_back(x);
     }
-    for (auto cur=l.begin(); cur!=l.end();)
+    for (auto next=l.begin(); next!=l.end();)
     {
-        l.emplace_back(cur);
+        auto cur = next;
+        if (++next != l.end() && *cur == *next)
+            next = l.erase(next);
+    }
+    for (auto cur = l.begin(); cur != l.end();cur++)
+    {
         cout << *cur << " ";
     }
-
     system("PAUSE");
     return 0;
 }

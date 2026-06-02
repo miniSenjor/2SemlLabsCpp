@@ -22,8 +22,11 @@ void add(Node* p, int a)
 void deleteNext(Node* p)
 {
     Node* q = p->next;
-    p->next = q->next;
-    delete q;
+    if (q)
+    {
+        p->next = q->next;
+        delete q;
+    }
 }
 int main()
 {
@@ -47,7 +50,8 @@ int main()
     {
         if (cur->next->val < 0)
             deleteNext(cur);
-        cur = cur->next;
+        else
+            cur = cur->next;
     }
     cur = l1->next;
     while (cur)
@@ -56,7 +60,8 @@ int main()
         cur = cur->next;
     }
     cur = l1;
-    while (cur != nullptr) {
+    while (cur != nullptr)
+    {
         Node* tmp = cur;
         cur = cur->next;
         delete tmp;

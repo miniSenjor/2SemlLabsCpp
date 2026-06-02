@@ -1,10 +1,9 @@
 ﻿//ИПБ-25 Скворцов С.А. 3.12 3
-/*Реализовать программу создания по линейному однонаправленному списку L двух новых списков L1 и L2. В L1 записать элементы списка L, которые не меньше среднего арифметического, а в L2 – элементы списка L, которые меньше среднего арифметического элементов L
-
+/*Реализовать программу, которая добавляет в конец  линейного однонаправленного списка L1 все элементы L2.
 Замечание: использовать контейнеры типа list и/или forward_list*/
 
 #include <iostream>
-#include <list>
+#include <forward_list>
 //#include "rus_io.h"
 //#include "conio2.h"
 using namespace std;
@@ -16,12 +15,12 @@ int main()
     int n;
     cout << "Введите размер списка ";
     cin >> n;
-    list<int> l, l1, l2;
+    forward_list<int> l1, l2;
     for (int i = 0; i < n; i++)
     {
         int x;
         cin >> x;
-        l1.emplace_back(x);
+        l1.emplace_front(x);
     }
     cout << "Введите размер списка ";
     cin >> n;
@@ -29,14 +28,15 @@ int main()
     {
         int x;
         cin >> x;
-        l2.emplace_back(x);
+        l2.emplace_front(x);
     }
-    l = l1;
+    l2.reverse();
     for (int cur : l2)
-    {
-        l.emplace_back(cur);
+        l1.emplace_front(cur);
+    
+    l1.reverse();
+    for (int cur : l1)
         cout << cur << " ";
-    }
     
     system("PAUSE");
     return 0;
